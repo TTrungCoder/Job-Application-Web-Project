@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { motion } from "framer-motion";
+import { useState } from "react";
+import "./App.css";
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <motion.div
+      layout
+      data-isOpen={isOpen}
+      initial={{ borderRadius: 50 }}
+      className="parent"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <motion.div layout className="child" />
+    </motion.div>
   );
 }
 
