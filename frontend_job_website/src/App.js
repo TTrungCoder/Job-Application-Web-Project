@@ -1,19 +1,19 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+/* import { motion } from "framer-motion";
+import { useState } from "react"; */
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./Pages/Login/Login";
+import Layout from "./Layouts/Layout/Layout";
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <motion.div
-      layout
-      data-isOpen={isOpen}
-      initial={{ borderRadius: 50 }}
-      className="parent"
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      <motion.div layout className="child" />
-    </motion.div>
+    /*  <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter> */
+    <Login />
   );
 }
 
